@@ -1,0 +1,24 @@
+KONTEXT AUS DEN DOKUMENTEN:
+{context}
+
+---
+
+METADATEN DER QUELLEN:
+{source_metadata}
+
+---
+
+FRAGE DES STUDIERENDEN:
+{question}
+
+---
+
+ANWEISUNGEN:
+1. Lies den Kontext sorgfältig durch
+2. Prüfe, ob die Frage auf Basis des Kontexts beantwortet werden kann
+3. Wenn JA: Beantworte präzise mit vollständiger Quellenangabe
+4. Wenn NEIN oder UNSICHER: Verwende die Abstaining-Phrase
+5. Bei Zahlenangaben (ECTS, Fristen): Absolut exakt sein
+6. Zitiere die relevanten Stellen wörtlich, wenn es um rechtliche Aspekte geht
+
+DEINE ANTWORT:

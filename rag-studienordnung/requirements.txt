@@ -1,0 +1,82 @@
+# Core Framework
+fastapi>=0.104.0
+uvicorn>=0.24.0
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+
+# LangChain & RAG
+langchain>=0.1.0
+langchain-community>=0.1.0
+langchain-openai>=0.0.5
+langchain-anthropic>=0.1.0
+
+# Vector & Search
+faiss-cpu>=1.7.4
+sentence-transformers>=2.2.2
+rank-bm25>=0.2.2
+
+# PDF Processing
+pymupdf>=1.23.0
+pdfplumber>=0.10.0
+tabula-py>=2.8.0
+pypdf>=3.17.0
+
+# Web Scraping
+beautifulsoup4>=4.12.0
+requests>=2.31.0
+lxml>=4.9.0
+playwright>=1.40.0
+selenium>=4.15.0
+
+# Data Processing
+pandas>=2.0.0
+numpy>=1.24.0
+python-docx>=1.0.0
+
+# Evaluation
+ragas>=0.1.0
+datasets>=2.14.0
+
+# LLM APIs
+openai>=1.0.0
+anthropic>=0.8.0
+tiktoken>=0.5.0
+
+# Logging & Monitoring
+structlog>=23.0.0
+python-json-logger>=2.0.7
+
+# Configuration
+pyyaml>=6.0
+python-dotenv>=1.0.0
+
+# HTTP & Async
+httpx>=0.25.0
+aiohttp>=3.9.0
+aiofiles>=23.0.0
+
+# Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+pytest-mock>=3.12.0
+
+# CLI & UI
+rich>=13.0.0
+click>=8.1.0
+tqdm>=4.66.0
+
+# Utilities
+python-multipart>=0.0.6
+regex>=2023.10.0
+chardet>=5.2.0
+ftfy>=6.1.0
+
+# Optional: Local LLM support
+# vllm>=0.2.0
+# transformers>=4.35.0
+# torch>=2.0.0
+
+# Optional: Advanced PDF processing
+# camelot-py>=0.11.0
+# pdf2image>=1.16.0
