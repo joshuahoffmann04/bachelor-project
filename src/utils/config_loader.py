@@ -6,6 +6,15 @@ from pathlib import Path
 from typing import Any, Dict
 from dotenv import load_dotenv
 
+# Lazy import to avoid circular dependencies
+def _get_device_detector():
+    """Lazy import of device detection to avoid import errors."""
+    try:
+        from .device import set_device_for_embedding_model
+        return set_device_for_embedding_model
+    except ImportError:
+        return None
+
 
 # Load environment variables
 load_dotenv()
@@ -68,6 +77,22 @@ def load_config(config_path: str = "config/config.yaml") -> Dict[str, Any]:
 
     # Substitute environment variables
     config = _substitute_env_vars(config)
+
+    # Auto-detect device for embeddings if needed
+    device_detector = _get_device_detector()
+    if device_detector:
+        try:
+            # Only override if device is 'cpu' or 'auto'
+            current_device = config.get('embeddings', {}).get('device', 'cpu')
+            if current_device in ['cpu', 'auto']:
+                detected_device = device_detector(config)
+                if 'embeddings' not in config:
+                    config['embeddings'] = {}
+                config['embeddings']['device'] = detected_device
+        except Exception as e:
+            # Don't fail config loading if device detection fails
+            import logging
+            logging.warning(f"Device auto-detection failed: {e}")
 
     # Cache the config
     global _config_cache
