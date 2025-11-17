@@ -9,11 +9,17 @@ import tiktoken
 
 from ..preprocessing.document import Document, DocumentChunk, ContentType, SourceType
 from ..utils.logger import get_logger
+from ..utils.constants import (
+    DEFAULT_CHUNK_SIZE,
+    DEFAULT_CHUNK_OVERLAP,
+    AVG_WORD_LENGTH_CHARS,
+    TOKEN_APPROXIMATION_FACTOR
+)
 
 logger = get_logger(__name__)
 
 
-def chunk_text_simple(text: str, chunk_size: int = 512, overlap: int = 50) -> List[str]:
+def chunk_text_simple(text: str, chunk_size: int = DEFAULT_CHUNK_SIZE, overlap: int = DEFAULT_CHUNK_OVERLAP) -> List[str]:
     """Simple text chunking utility function.
 
     Splits text into chunks by paragraphs, ensuring chunks don't exceed chunk_size.
@@ -286,9 +292,9 @@ class HybridChunker:
         words = text.split()
 
         # Calculate approximate words per chunk
-        # Assume average word length of 5 chars
-        words_per_chunk = self.window_size // 6
-        overlap_words = self.window_overlap // 6
+        # Use average word length constant
+        words_per_chunk = self.window_size // AVG_WORD_LENGTH_CHARS
+        overlap_words = self.window_overlap // AVG_WORD_LENGTH_CHARS
 
         start = 0
         chunk_idx = 0
@@ -410,5 +416,5 @@ class HybridChunker:
             except Exception:
                 pass
 
-        # Fallback: approximate as words * 1.3
-        return int(len(text.split()) * 1.3)
+        # Fallback: approximate using token approximation factor
+        return int(len(text.split()) * TOKEN_APPROXIMATION_FACTOR)

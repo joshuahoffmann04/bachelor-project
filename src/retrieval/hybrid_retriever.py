@@ -7,6 +7,7 @@ from .dense_retriever import DenseRetriever
 from .sparse_retriever import SparseRetriever
 from ..preprocessing.document import DocumentChunk
 from ..utils.logger import get_logger
+from ..utils.constants import RRF_RANK_CONSTANT
 
 logger = get_logger(__name__)
 
@@ -92,7 +93,7 @@ class HybridRetriever:
         self,
         dense_results: List[Tuple[DocumentChunk, float]],
         sparse_results: List[Tuple[DocumentChunk, float]],
-        k: int = 60
+        k: int = RRF_RANK_CONSTANT
     ) -> List[Tuple[DocumentChunk, float]]:
         """Combine results using Reciprocal Rank Fusion.
 
