@@ -44,13 +44,18 @@ env/
 
 # Data files
 data/raw/*.pdf
-data/processed/
-data/chunks/
-data/scraped/
-data/test_sets/
+data/processed/*
+!data/processed/.gitkeep
+data/chunks/*
+!data/chunks/.gitkeep
+data/scraped/*
+!data/scraped/.gitkeep
+data/test_sets/*
+!data/test_sets/.gitkeep
 
 # Logs
-logs/
+logs/*
+!logs/.gitkeep
 *.log
 
 # Jupyter Notebooks
