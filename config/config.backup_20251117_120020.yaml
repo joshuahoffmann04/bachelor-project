@@ -121,7 +121,7 @@ prompts:
     required: true
     format: 'Quelle: {source_doc}, Seite {page}, {section}'
   abstaining:
-    threshold: 0.5
+    threshold: 0.6
     message: Ich kann diese Frage nicht sicher auf Basis der vorliegenden Dokumente
       beantworten.
 evaluation:

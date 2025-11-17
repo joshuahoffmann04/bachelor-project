@@ -79,7 +79,7 @@ def retrieval_poor():
     console.print("1. Teste: python debug.py test-retrieval 'Deine Frage'")
 
 
-@cli.command()
+@cli.command(name="chunks_too_large")
 def chunks_too_large():
     """Fix: Chunks are too large."""
     console.print(Panel.fit(
@@ -138,7 +138,7 @@ def hallucinations():
     console.print("\n[bold green]✓ Anti-Hallucination Settings aktiviert![/bold green]")
 
 
-@cli.command()
+@cli.command(name="abstains_too_much")
 def abstains_too_much():
     """Fix: System abstains too often."""
     console.print(Panel.fit(
