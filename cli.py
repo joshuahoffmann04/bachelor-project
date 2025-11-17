@@ -388,18 +388,21 @@ def build_index(config):
 
 @cli.command()
 @click.option('--config', default='config/config.yaml', help='Path to config file')
-@click.option('--test-set', default=None, help='Path to test dataset')
+@click.option('--test-set', default='data/test_sets/', help='Path to test dataset')
 @click.option('--output', default='evaluation_results.json', help='Output file')
 @click.option('--verbose', is_flag=True, help='Show detailed results')
 def evaluate(config, test_set, output, verbose):
-    """Run evaluation on test dataset (to be implemented in Phase 2)."""
-    console.print("[yellow]Evaluation framework will be implemented in Phase 2[/yellow]")
-    console.print("[cyan]This will include:[/cyan]")
-    console.print("  - RAGAS metrics (context relevance, faithfulness, answer relevance)")
-    console.print("  - Custom metrics (ECTS accuracy, reference quality, abstaining rate)")
-    console.print("  - Test dataset processing")
-    console.print("  - Results export (JSON and Markdown)")
-    sys.exit(0)
+    """Run evaluation on test dataset.
+
+    Evaluates the RAG system using:
+    - RAGAS metrics (context relevance, faithfulness, answer relevance)
+    - Custom metrics (ECTS accuracy, reference quality, abstaining rate, hallucination detection)
+    - Exports results to JSON and Markdown formats
+    """
+    from pipeline import ProcessingPipeline
+
+    pipeline = ProcessingPipeline(config)
+    pipeline.evaluate(test_set, output, verbose)
 
 
 if __name__ == '__main__':
