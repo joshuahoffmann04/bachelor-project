@@ -72,8 +72,8 @@ embeddings:
 retrieval:
   hybrid:
     enabled: true
-    dense_weight: 0.7
-    sparse_weight: 0.3
+    dense_weight: 0.8
+    sparse_weight: 0.2
     fusion_method: rrf
   dense:
     top_k: 10
