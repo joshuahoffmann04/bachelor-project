@@ -13,6 +13,61 @@ from ..utils.logger import get_logger
 logger = get_logger(__name__)
 
 
+def chunk_text_simple(text: str, chunk_size: int = 512, overlap: int = 50) -> List[str]:
+    """Simple text chunking utility function.
+
+    Splits text into chunks by paragraphs, ensuring chunks don't exceed chunk_size.
+    This is a lightweight utility for basic chunking needs.
+
+    Args:
+        text: Text to chunk
+        chunk_size: Maximum chunk size in characters
+        overlap: Character overlap between chunks (not used in paragraph mode, reserved for future)
+
+    Returns:
+        List of text chunks
+
+    Examples:
+        >>> text = "Para 1\\n\\nPara 2\\n\\nPara 3"
+        >>> chunks = chunk_text_simple(text, chunk_size=100)
+        >>> len(chunks) >= 1
+        True
+
+    Note:
+        This function is used by pdf_parser.py and web_scraper.py for simple chunking.
+        For more advanced chunking with semantic analysis, use HybridChunker class.
+    """
+    # Split by paragraphs first (double newlines)
+    paragraphs = text.split('\n\n')
+    chunks = []
+    current_chunk = []
+    current_size = 0
+
+    for para in paragraphs:
+        para = para.strip()
+        if not para:
+            continue
+
+        para_size = len(para)
+
+        # If adding this paragraph would exceed chunk_size and we have content, start new chunk
+        if current_size + para_size > chunk_size and current_chunk:
+            # Save current chunk
+            chunks.append('\n\n'.join(current_chunk))
+            current_chunk = [para]
+            current_size = para_size
+        else:
+            # Add to current chunk
+            current_chunk.append(para)
+            current_size += para_size
+
+    # Add final chunk
+    if current_chunk:
+        chunks.append('\n\n'.join(current_chunk))
+
+    return chunks
+
+
 class ChunkingStrategy(str, Enum):
     """Chunking strategy types."""
     SEMANTIC = "semantic"

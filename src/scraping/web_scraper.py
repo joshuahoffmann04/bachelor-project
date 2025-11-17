@@ -380,23 +380,6 @@ class WebScraper:
         Returns:
             List of text chunks
         """
-        paragraphs = text.split('\n\n')
-        chunks = []
-        current_chunk = []
-        current_size = 0
-
-        for para in paragraphs:
-            para_size = len(para)
-
-            if current_size + para_size > chunk_size and current_chunk:
-                chunks.append('\n\n'.join(current_chunk))
-                current_chunk = [para]
-                current_size = para_size
-            else:
-                current_chunk.append(para)
-                current_size += para_size
-
-        if current_chunk:
-            chunks.append('\n\n'.join(current_chunk))
-
-        return chunks
+        # Use centralized chunking utility to avoid code duplication
+        from ..chunking.chunker import chunk_text_simple
+        return chunk_text_simple(text, chunk_size=chunk_size)
