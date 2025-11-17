@@ -1,0 +1,10 @@
+{"question": "Welche Voraussetzungen gibt es für das Modul Advanced Database Systems?", "category": "prerequisites", "difficulty": "medium", "metadata": {"module": "Advanced Database Systems"}}
+{"question": "Brauche ich Vorkenntnisse für Algorithmen und Datenstrukturen?", "ground_truth_answer": "Ja, Grundlagen der Programmierung", "category": "prerequisites", "difficulty": "easy", "metadata": {"module": "Algorithmen und Datenstrukturen"}}
+{"question": "Was muss ich vor Softwaretechnik belegt haben?", "category": "prerequisites", "difficulty": "medium", "metadata": {"module": "Softwaretechnik"}}
+{"question": "Gibt es für die Bachelorarbeit Zulassungsvoraussetzungen?", "ground_truth_answer": "Ja, mindestens 120 ECTS müssen erreicht sein", "category": "prerequisites", "difficulty": "easy", "metadata": {"module": "Bachelorarbeit"}}
+{"question": "Kann ich Betriebssysteme im ersten Semester belegen?", "category": "prerequisites", "difficulty": "medium", "metadata": {"module": "Betriebssysteme", "notes": "Indirect prerequisite question"}}
+{"question": "Welche Module sind erforderlich, um am Seminar teilnehmen zu können?", "category": "prerequisites", "difficulty": "hard", "metadata": {"notes": "Generic question about seminars"}}
+{"question": "Muss ich Mathematik 1 bestanden haben, bevor ich Mathematik 2 belegen kann?", "ground_truth_answer": "Ja, Mathematik 1 ist Voraussetzung", "category": "prerequisites", "difficulty": "easy", "metadata": {"module": "Mathematik 2"}}
+{"question": "Gibt es formale oder empfohlene Voraussetzungen für Compilerbau?", "category": "prerequisites", "difficulty": "medium", "metadata": {"module": "Compilerbau", "notes": "Distinguishes between formal and recommended"}}
+{"question": "In welcher Reihenfolge sollte ich die Programmiermodule absolvieren?", "category": "prerequisites", "difficulty": "hard", "metadata": {"notes": "Requires understanding of curriculum structure"}}
+{"question": "Kann ich das Praxissemester auch ohne abgeschlossene Grundlagenmodule machen?", "category": "prerequisites", "difficulty": "medium", "metadata": {"module": "Praxissemester"}}

@@ -50,8 +50,11 @@ data/chunks/*
 !data/chunks/.gitkeep
 data/scraped/*
 !data/scraped/.gitkeep
-data/test_sets/*
+data/test_sets/*.csv
 !data/test_sets/.gitkeep
+!data/test_sets/*.jsonl
+!data/test_sets/*.json
+!data/test_sets/README.md
 
 # Logs
 logs/*

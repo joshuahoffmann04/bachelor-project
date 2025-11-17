@@ -1,0 +1,10 @@
+{"question": "Bis wann muss ich mich für die Bachelorarbeit anmelden?", "category": "deadlines", "difficulty": "medium", "metadata": {"topic": "Bachelorarbeit Anmeldung"}}
+{"question": "Wann ist die Frist für die Prüfungsanmeldung?", "category": "deadlines", "difficulty": "easy", "metadata": {"topic": "Prüfungsanmeldung"}}
+{"question": "Bis wann kann ich von einer Prüfung zurücktreten?", "category": "deadlines", "difficulty": "medium", "metadata": {"topic": "Prüfungsrücktritt"}}
+{"question": "Gibt es eine Deadline für die Modulwahl im kommenden Semester?", "category": "deadlines", "difficulty": "medium", "metadata": {"topic": "Modulwahl"}}
+{"question": "Wie lange habe ich Zeit für die Abgabe der Bachelorarbeit?", "ground_truth_answer": "12 Wochen", "category": "deadlines", "difficulty": "easy", "metadata": {"topic": "Bachelorarbeit Bearbeitungszeit"}}
+{"question": "Wann beginnt die Anmeldephase für das Wintersemester?", "category": "deadlines", "difficulty": "easy", "metadata": {"topic": "Semesteranmeldung"}}
+{"question": "Bis zu welchem Datum muss ich meine Hausarbeit einreichen?", "category": "deadlines", "difficulty": "hard", "metadata": {"topic": "Hausarbeit", "notes": "Very specific, may vary by course"}}
+{"question": "Gibt es verschiedene Fristen für Erst- und Wiederholungsprüfungen?", "category": "deadlines", "difficulty": "hard", "metadata": {"topic": "Prüfungsfristen"}}
+{"question": "Kann ich die Anmeldefrist für Prüfungen verlängern?", "category": "deadlines", "difficulty": "medium", "metadata": {"topic": "Fristverlängerung"}}
+{"question": "Wann ist spätestens die Abgabe für Prüfungsleistungen im Sommersemester?", "category": "deadlines", "difficulty": "medium", "metadata": {"topic": "Sommersemester Deadlines"}}

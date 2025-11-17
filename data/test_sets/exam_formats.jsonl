@@ -1,0 +1,10 @@
+{"question": "Wie läuft die Prüfung im Modul Softwaretechnik ab?", "category": "exam_formats", "difficulty": "medium", "metadata": {"module": "Softwaretechnik"}}
+{"question": "Ist die Prüfung in Algorithmen und Datenstrukturen schriftlich oder mündlich?", "ground_truth_answer": "Schriftlich, 120 Minuten", "category": "exam_formats", "difficulty": "easy", "metadata": {"module": "Algorithmen und Datenstrukturen"}}
+{"question": "Welche Prüfungsform hat das Modul Datenbanksysteme?", "category": "exam_formats", "difficulty": "easy", "metadata": {"module": "Datenbanksysteme"}}
+{"question": "Gibt es in Betriebssystemen eine Klausur oder ein Projekt?", "category": "exam_formats", "difficulty": "medium", "metadata": {"module": "Betriebssysteme"}}
+{"question": "Wie lange dauert die mündliche Prüfung in Theoretischer Informatik?", "ground_truth_answer": "30 Minuten", "category": "exam_formats", "difficulty": "medium", "metadata": {"module": "Theoretische Informatik"}}
+{"question": "Ist bei Compilerbau eine Präsentation erforderlich?", "category": "exam_formats", "difficulty": "hard", "metadata": {"module": "Compilerbau"}}
+{"question": "Welche Hilfsmittel sind in der Mathematik 1 Klausur erlaubt?", "category": "exam_formats", "difficulty": "medium", "metadata": {"module": "Mathematik 1", "topic": "Hilfsmittel"}}
+{"question": "Gibt es in Rechnernetze eine Laborprüfung?", "category": "exam_formats", "difficulty": "medium", "metadata": {"module": "Rechnernetze"}}
+{"question": "Wie setzt sich die Note im Praktikum Softwareentwicklung zusammen?", "category": "exam_formats", "difficulty": "hard", "metadata": {"module": "Praktikum Softwareentwicklung", "topic": "Notenbildung"}}
+{"question": "Kann ich die Prüfung in Advanced Topics in AI als Portfolio-Prüfung ablegen?", "category": "exam_formats", "difficulty": "hard", "metadata": {"module": "Advanced Topics in AI", "notes": "Advanced module with flexible format"}}

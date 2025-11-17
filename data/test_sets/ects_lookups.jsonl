@@ -1,0 +1,10 @@
+{"question": "Wie viele ECTS hat das Modul Algorithmen und Datenstrukturen?", "ground_truth_answer": "8 ECTS", "ects_value": 8, "category": "ects_lookup", "difficulty": "easy", "metadata": {"module": "Algorithmen und Datenstrukturen"}}
+{"question": "Wie viele Leistungspunkte bekomme ich für Datenbanksysteme?", "ects_value": 6, "category": "ects_lookup", "difficulty": "easy", "metadata": {"module": "Datenbanksysteme", "notes": "LP and ECTS are synonymous"}}
+{"question": "Was ist der ECTS-Wert des Moduls Softwaretechnik?", "ects_value": 8, "category": "ects_lookup", "difficulty": "easy", "metadata": {"module": "Softwaretechnik"}}
+{"question": "Wie viele Credits gibt es für das Mathematik 1 Modul?", "ects_value": 9, "category": "ects_lookup", "difficulty": "easy", "metadata": {"module": "Mathematik 1"}}
+{"question": "ECTS für Betriebssysteme?", "ects_value": 6, "category": "ects_lookup", "difficulty": "easy", "metadata": {"module": "Betriebssysteme", "notes": "Short question format"}}
+{"question": "Ich möchte wissen, wie viele Leistungspunkte das Modul Rechnernetze bringt.", "ects_value": 6, "category": "ects_lookup", "difficulty": "medium", "metadata": {"module": "Rechnernetze", "notes": "Longer, conversational format"}}
+{"question": "Wie ist die ECTS-Verteilung in der Bachelorarbeit?", "ects_value": 12, "category": "ects_lookup", "difficulty": "medium", "metadata": {"module": "Bachelorarbeit"}}
+{"question": "Hat das Praktikum Softwareentwicklung auch ECTS-Punkte?", "ground_truth_answer": "Ja, 6 ECTS", "ects_value": 6, "category": "ects_lookup", "difficulty": "medium", "metadata": {"module": "Praktikum Softwareentwicklung"}}
+{"question": "Werden für das Seminar zur Theoretischen Informatik Leistungspunkte vergeben und wenn ja, wie viele?", "ects_value": 3, "category": "ects_lookup", "difficulty": "hard", "metadata": {"module": "Seminar Theoretische Informatik", "notes": "Complex question with conditional"}}
+{"question": "Unterscheiden sich die ECTS zwischen Compilerbau und Automatentheorie?", "category": "ects_lookup", "difficulty": "hard", "metadata": {"notes": "Comparison question requiring multiple lookups"}}
