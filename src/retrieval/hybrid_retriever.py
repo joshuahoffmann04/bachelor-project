@@ -129,10 +129,28 @@ class HybridRetriever:
             reverse=True
         )
 
-        # Create results
+        # Normalize scores to [0, 1] range for better interpretability
+        if sorted_chunks:
+            scores = [score for _, score in sorted_chunks]
+            min_score = min(scores)
+            max_score = max(scores)
+
+            if max_score > min_score:
+                # Min-max normalization
+                normalized_chunks = [
+                    (chunk_id, (score - min_score) / (max_score - min_score))
+                    for chunk_id, score in sorted_chunks
+                ]
+            else:
+                # All scores are the same
+                normalized_chunks = [(chunk_id, 1.0) for chunk_id, _ in sorted_chunks]
+        else:
+            normalized_chunks = []
+
+        # Create results with normalized scores
         results = [
             (chunk_map[chunk_id], score)
-            for chunk_id, score in sorted_chunks
+            for chunk_id, score in normalized_chunks
         ]
 
         return results

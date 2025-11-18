@@ -134,19 +134,35 @@ ANTWORT:"""
                 }
             }
 
-        # Check confidence
-        avg_score = sum(score for _, score in chunks_with_scores) / len(chunks_with_scores)
-        if avg_score < self.abstaining_threshold:
-            logger.info("low_confidence_abstaining", avg_score=avg_score)
+        # Check confidence (improved: consider both top score and average)
+        scores = [score for _, score in chunks_with_scores]
+        avg_score = sum(scores) / len(scores)
+        top_score = max(scores) if scores else 0.0
+
+        # More sophisticated confidence check:
+        # - If top score is very high (>0.7), allow even if avg is lower
+        # - Otherwise, use average score
+        confidence = max(top_score * 0.7, avg_score)  # Weight top score more
+
+        if confidence < self.abstaining_threshold:
+            logger.info(
+                "low_confidence_abstaining",
+                avg_score=avg_score,
+                top_score=top_score,
+                confidence=confidence,
+                threshold=self.abstaining_threshold
+            )
             return {
                 'answer': self.abstaining_message,
                 'sources': [chunk.get_citation() for chunk, _ in chunks_with_scores],
-                'confidence': avg_score,
+                'confidence': confidence,
                 'metadata': {
                     'retrieval_time_ms': retrieval_time,
                     'generation_time_ms': 0,
                     'total_time_ms': (time.time() - start_time) * 1000,
-                    'abstained': True
+                    'abstained': True,
+                    'avg_score': avg_score,
+                    'top_score': top_score
                 }
             }
 
@@ -186,13 +202,15 @@ ANTWORT:"""
                 'answer': answer,
                 'sources': [chunk.get_citation() for chunk, _ in chunks_with_scores],
                 'chunks': [chunk for chunk, _ in chunks_with_scores],
-                'scores': [score for _, score in chunks_with_scores],
-                'confidence': avg_score,
+                'scores': scores,
+                'confidence': confidence,
                 'metadata': {
                     'retrieval_time_ms': retrieval_time,
                     'generation_time_ms': generation_time,
                     'total_time_ms': (time.time() - start_time) * 1000,
-                    'num_chunks': len(chunks_with_scores)
+                    'num_chunks': len(chunks_with_scores),
+                    'avg_score': avg_score,
+                    'top_score': top_score
                 }
             }
 
